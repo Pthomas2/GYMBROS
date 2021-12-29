@@ -78,7 +78,7 @@ public class MemberController {
 	@PutMapping("/update/member")
 	public @ResponseBody String updateMember(@RequestBody Member updateMember) {
 		
-		// check if member exists, then update them
+		// check if member exists,then update them
 		
 		Optional<Member> found = service.findById(updateMember.getMbrId());
 		
