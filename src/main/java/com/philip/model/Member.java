@@ -36,10 +36,9 @@ public class Member implements Serializable {
 	@Column(name = "Mbr_IsAdmin", columnDefinition = "boolean default false")
 	private Boolean isAdmin;
 
-	@Column(name = "Mbr_Gym", unique = false, nullable = false)
-	private String gymName;
+	@Column(name = "Mbr_Gym", unique = false, nullable = true)
+	private Long gymId;
 
-	
 	@Column(name = "Mbr_Username", unique = true, nullable = false)
 	private String username;
 
@@ -51,7 +50,7 @@ public class Member implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Member(Long mbrId, String fname, String lname, String email, Boolean isAdmin, String gymName,
+	public Member(Long mbrId, String fname, String lname, String email, Boolean isAdmin, Long gymId,
 			String username, String password) {
 		super();
 		this.mbrId = mbrId;
@@ -59,7 +58,7 @@ public class Member implements Serializable {
 		this.lname = lname;
 		this.email = email;
 		this.isAdmin = isAdmin;
-		this.gymName = gymName;
+		this.gymId = gymId;
 		this.username = username;
 		this.password = password;
 	}
@@ -104,12 +103,12 @@ public class Member implements Serializable {
 		this.isAdmin = isAdmin;
 	}
 
-	public String getGymName() {
-		return gymName;
+	public Long getGymId() {
+		return gymId;
 	}
 
-	public void setGymName(String gymName) {
-		this.gymName = gymName;
+	public void setGymId(Long gymId) {
+		this.gymId = gymId;
 	}
 
 	public String getUsername() {
